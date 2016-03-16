@@ -1,0 +1,36 @@
+<html lang="zh-CN">
+<head>
+    <title>site</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{static_url('css/base.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{static_url('css/jquery.fancybox.css')}}" type="text/css">
+
+    <script src="http://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="{{static_url('js/jquery.fancybox.js')}}"></script>
+    <script type="text/javascript" src="{{static_url('js/base.js')}}"></script>
+</head>
+<body>
+<div class="header">
+    <a href="#" class="title">YF's blog</a>
+    <a href="javascript:;" id="login-btn" class="login-btn fancybox">登录</a>
+    <ul class="menu">
+        {% if result%}
+            {% for i in result %}
+                <li><a href="/">{{i['name']}}</a></li>
+            {% end %}
+        {% end %}
+    </ul>
+    <div class="header-mask"></div>
+</div>
+<div class="fake-header"></div>
+<center>
+<div class="main">
+{% block body %}{% end %}
+</div></center>
+<div class="footer"></div>
+
+<script type="text/html" id="login-page">
+    <div id="f5list">login</div>
+</script>
+</body>
+</html>
