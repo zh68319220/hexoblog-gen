@@ -89,23 +89,6 @@ ul li{ list-style-type: none;
     height: 200px;
     background: #232323;
 }
-
-.left{
-    float: left;
-    width: 600px;
-    background: red;
-}
-
-.right{
-    float: left;
-    width: 200px;
-    background: blue;
-}
-
-.btn{
-
-}
-
 .login-btn{
     float: right;
     display: block;

@@ -1,10 +1,10 @@
 import tornado.ioloop,tornado.web,\
     tornado.httpserver,tornado.process,\
     tornado.netutil,tornado.locale, os
-import app.main as main
 from tornado.options import options, define
-import pymysql.cursors
 import logging as l
+from urls import urls
+# import pymysql.cursors
 
 class Application(tornado.web.Application):
     def __init__(self):
@@ -18,19 +18,19 @@ class Application(tornado.web.Application):
             'debug': True,
             'xsrf_cookies': True,
         }
-        super(Application, self).__init__([('/', main.MainHandler)], **settings)
+        super(Application, self).__init__(urls, **settings)
 
         ## 连接数据库  todo: pymysql异步
-        def connect():
-            # Connect to the database
-            connection = pymysql.connect(host='localhost',
-                                         user='root',
-                                         password='root',
-                                         db='blog',
-                                         charset='utf8',
-                                         cursorclass=pymysql.cursors.DictCursor)
-            return connection
-        self.db = connect()
+        # def connect():
+        #     # Connect to the database
+        #     connection = pymysql.connect(host='localhost',
+        #                                  user='root',
+        #                                  password='root',
+        #                                  db='blog',
+        #                                  charset='utf8',
+        #                                  cursorclass=pymysql.cursors.DictCursor)
+        #     return connection
+        # self.db = connect()
 
 if __name__ == "__main__":
     # tornado.locale.load_translations(os.path.join(options.run_path, "locale"))

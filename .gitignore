@@ -4,3 +4,7 @@
 *.tmp
 *.err
 *.txt
+*.pyd
+*.pyc
+.idea/*
+__pycache__/
