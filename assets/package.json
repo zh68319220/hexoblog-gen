@@ -1,0 +1,17 @@
+{
+  "name": "dev-gulp",
+  "version": "0.1.0",
+  "author": {
+    "name": "yf",
+    "email": "420866750@qq.com"
+  },
+  "license": "ISC",
+  "description": "just test",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/zh68319220/blog.git"
+  }
+}
