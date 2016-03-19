@@ -23,8 +23,13 @@ var App = React.createClass({
 		return (
 			<div className="main">
 				<div className="menu">
-					<Link to="userlist">用户</Link>
-					<Link to="bloglist">文章</Link>
+                    <ul className="list">
+                        <li>
+                            <span className="glyphicon glyphicon-user"></span>
+                            <Link to="userlist">用户</Link>
+                        </li>
+                        <li><Link to="bloglist">文章</Link></li>
+                    </ul>
 				</div>
 				<div className="content">
 					<RouteHandler />
