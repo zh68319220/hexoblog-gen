@@ -13,4 +13,5 @@ class MainHandler(system):
         if self.u:
             self.render("sys.html")
         else:
-            self.redirect('/login')
+            self.render("sys.html")
+            # self.redirect('/login')
