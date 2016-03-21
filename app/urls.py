@@ -6,5 +6,6 @@ urls = [
     (r'^/$', index.MainHandler),
     (r'^/examples', index.ExampleHandler),
     (r'^/about', index.AboutHandler),
-    (r'^/sys', sys.MainHandler)
+    (r'^/sys', sys.MainHandler),
+    (r'^/login', index.LoginHandler)
 ]

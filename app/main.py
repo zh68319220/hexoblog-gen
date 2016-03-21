@@ -27,3 +27,7 @@ class AboutHandler(main):
 class ExampleHandler(main):
     def get(self):
         self.render("example.html")
+
+class LoginHandler(main):
+    def get(self):
+        self.render("login.html")

@@ -108,3 +108,9 @@ ul li{ list-style-type: none;}
     line-height: 47px;
     padding-right: 20px;
 }
+.placeholder{
+    position: absolute;
+    top: 7px;
+    left: 24px;
+    color: #D4D4D4;
+}
