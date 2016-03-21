@@ -1,34 +1,29 @@
-// var Hello = React.createClass({
-// 	handleClick: function (event) {
-// 		alert('lick');
-// 	},
-// 	render: function() {
-// 		return(<div onClick={this.handleClick}>sadas</div>);
-// 	}
-// });
+// base events
+$(function(){
 
-// React.render(
-// 	<div><Hello /></div>,
-// 	document.getElementById('main')
-// );
-
+});
+// react stuff
 var Router = ReactRouter; // 由于是html直接引用的库，所以 ReactRouter 是以全局变量的形式挂在 window 上  
 var Route = ReactRouter.Route;  
 var RouteHandler = ReactRouter.RouteHandler;  
-var Link = ReactRouter.Link;  
+var Link = ReactRouter.Link;
 var StateMixin = ReactRouter.State;
 
 var App = React.createClass({
+    handleMenuClick: function(event) {
+        console.log(this);
+    },
 	render: function () {
 		return (
 			<div className="main">
 				<div className="menu">
-                    <ul className="list">
+                    <ul className="nav-pill" onClick={this.handleMenuClick}>
                         <li>
-                            <span className="glyphicon glyphicon-user"></span>
                             <Link to="userlist">用户</Link>
                         </li>
-                        <li><Link to="bloglist">文章</Link></li>
+                        <li>
+                            <Link to="bloglist">文章</Link>
+                        </li>
                     </ul>
 				</div>
 				<div className="content">
