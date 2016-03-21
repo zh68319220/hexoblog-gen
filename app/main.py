@@ -34,4 +34,3 @@ class LoginHandler(main):
     def post(self):
         username = self.get_argument('username')
         userpsw = self.get_argument('password')
-        l.info(username)
