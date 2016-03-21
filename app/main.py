@@ -31,3 +31,7 @@ class ExampleHandler(main):
 class LoginHandler(main):
     def get(self):
         self.render("login.html")
+    def post(self):
+        username = self.get_argument('username')
+        userpsw = self.get_argument('password')
+        l.info(username)

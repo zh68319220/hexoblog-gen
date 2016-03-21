@@ -3,6 +3,7 @@
     <title>site</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="{{static_url('css/base.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{static_url('css/bootstrap.css')}}" type="text/css">
     <link rel="stylesheet" href="{{static_url('css/jquery.fancybox.css')}}" type="text/css">
 
     <script src="http://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
@@ -29,8 +30,29 @@
 <div class="footer"></div>
 
 <script type="text/html" id="login-page">
-    <span id="qqLoginBtn"></span>
+    <div class="col-md-12">
+        <form class="form-horizontal">
+            <h3>登录</h3>
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <input type="text" class="form-control" name="username" id="username">
+                    <span id="username-span" class="placeholder">请输入用户名</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <input type="password" class="form-control" name="password" id="password">
+                    <span id="password-span" class="placeholder">请输入密码</span>
+                </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-3">
+                 <button type="submit" id="login" class="btn btn-info col-sm-12">登录</button>
+              </div>
+            </div>
+        </form>
+        <span id="qqLoginBtn"></span>
+    </div>
 </script>
-
 </body>
 </html>
