@@ -1,0 +1,15 @@
+/* adapt mobile screen */
+@media screen  and (max-width: 599px) {
+    #menu{ display: none; }
+    .login-btn{ display: none; }
+    .header-btn{ display: block; }
+    #title-pc{ display: none; }
+    #title-mb{ display: block; }
+}
+@media screen  and (min-width: 600px) {
+    #menu{ display: block; }
+    .login-btn{ display: block; }
+    .header-btn{ display: none; }
+    #title-pc{ display: block; }
+    #title-mb{ display: none; }
+}

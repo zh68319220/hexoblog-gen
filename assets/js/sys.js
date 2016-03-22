@@ -1,7 +1,3 @@
-// base events
-$(function(){
-
-});
 // react stuff
 var Router = ReactRouter; // 由于是html直接引用的库，所以 ReactRouter 是以全局变量的形式挂在 window 上  
 var Route = ReactRouter.Route;  

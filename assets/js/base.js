@@ -1,5 +1,5 @@
 $(function(){
-    // base
+    // prop extend func
     $.fn.extend({
         showLoginModal: function() {
             $.fancybox(this.html(), {
@@ -15,44 +15,48 @@ $(function(){
                     QC.Login({
                        btnId:"qqLoginBtn"    //插入按钮的节点id
                     });
-                    $("input").on("click", function (e) {
-                        $( "#" + $(this).attr("name") + "-span" ).hide();
-                    });
-                    $("input").on("blur", function (e) {
-                        $( "#" + $(this).attr("name") + "-span" ).show();
-                    });
-                    $(".placeholder").on("click", function (e) {
-                        $( "#" + $(this).attr("id").split('-span')[0] ).focus();
-                        $(this).hide();
-                    });
-                    $("#login").on("submit", function (e) {
+                    $("#login").on("click", function (e) {
                         e.preventDefault();
                         e.stopPropagation();
-                        
+                        return false;
                     });
                 }
             });
         }
     });
-
-    // current operations
-
-    // placeholder
-    $("input").on("click", function (e) {
-        $( "#" + $(this).attr("name") + "-span" ).hide();
+    // class extend func
+    $.extend({
+        activePlaceHolder: function () {
+            // placeholder
+            $("input").live("click", function (e) {
+                $( "#" + $(this).attr("name") + "-span" ).hide();
+            });
+            $("input").live("blur", function (e) {
+                $( "#" + $(this).attr("name") + "-span" ).show();
+            });
+            $(".placeholder").live("click", function (e) {
+                $( "#" + $(this).attr("id").split('-span')[0] ).focus();
+                $(this).hide();
+            });
+        }
     });
-    $("input").on("blur", function (e) {
-        $( "#" + $(this).attr("name") + "-span" ).show();
-    });
-    $(".placeholder").on("click", function (e) {
-        $( "#" + $(this).attr("id").split('-span')[0] ).focus();
-        $(this).hide();
-    });
 
-    // show login modal
-    $("#login-btn").on("click", function (e) {
+    // base actions
+    $.activePlaceHolder();
+    $("#login-btn").bind("click", function (e) {
         e.preventDefault();
         $("#login-page").showLoginModal();
     });
-
+    $("#login-btn2").bind("click", function (e) {
+        e.preventDefault();
+        $("#login-page").showLoginModal();
+    });
+    $("#menu-btn").bind("touchstart", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        $("#menu-mob").show();
+    });
+    $("body").bind("touchstart", function (e) {
+        $("#menu-mob").hide();
+    });
 });

@@ -1,40 +1,37 @@
+/* common */
 * {
     padding: 0;
     margin: 0;
 }
-/*声明 WebFont*/
-@font-face {
-  font-family: 'yaji';
-  src: url('../fonts/yaji.eot');
-  src:
-    url('../fonts/yaji.eot?#font-spider') format('embedded-opentype'),
-    url('../fonts/yaji.woff') format('woff'),
-    url('../fonts/yaji.ttf') format('truetype'),
-    url('../fonts/yaji.svg') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-/*使用选择器指定字体*/
-html {
-    font-family: 'yaji';
-}
 a{ text-decoration: none; }
+a:link{ text-decoration:none !important; }
+a:visited{ text-decoration:none !important; }
+a:hover{ text-decoration: none !important; }
 ul li{ list-style-type: none;}
-.title{
-    display: inline;
+body{
+    background-color: #fff;
+}
+
+/* header */
+.home-btn{
+    display: none;
+    color: #5bc0de;
+    font-size: 24px;
     height: 46px;
     line-height: 46px;
-    color: #0583ff;
-    font-size: 22px;
-    padding-left: 20px;
-    font-weight: bold;
 }
-.header{
+#header{
     position: fixed;
     height: 46px;
     width: 100%;
     z-index: 999;
     border-bottom: 1px solid #ebebeb;
+}
+.header-center{
+    height: 46px;
+    margin: auto;
+    max-width: 1600px;
+    padding: 0 25px;
 }
 .header-mask{
     position: absolute;
@@ -48,7 +45,7 @@ ul li{ list-style-type: none;}
     opacity: 0.8;
     -moz-opacity: 0.8;
     -khtml-opacity: 0.8;
-    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=$opt*100);
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=1);
     filter: alpha(opacity=80);
     background-color: #fff;
 }
@@ -58,22 +55,21 @@ ul li{ list-style-type: none;}
     width: 100%;
     background: #fff;
 }
-.menu{
-    position: absolute;
-    display: block;
+#menu{
+    position: relative;
+    width: 315px;
     height: 47px;
     line-height: 47px;
     top: 0;
-    left: 150px;
+    left: 100px;
 }
-.menu li{
-    float: left;
-}
-.menu li a{
+#menu li{ float: left; }
+#menu li a{
     display: block;
     padding: 0 22px 0;
     height: 47px;
     line-height: 47px;
+    color: #5bc0de;
 
     -webkit-transition: all linear .2s;
     -moz-transition: all linear .2s;
@@ -81,21 +77,29 @@ ul li{ list-style-type: none;}
     -o-transition: all linear .2s;
     transition: all linear .2s;
 }
-.menu li a:hover{
-    color: #fff;
-    background: #0583ff;
+#menu li a:hover{ color: #fff;background: #0583ff; }
+.login-btn{
+    font-size: 18px;
+    height: 47px;
+    line-height: 47px;
+    padding-right: 20px;
+    color: #5bc0de;
 }
+.login-btn i { font-size: 18px;color: #5bc0de;padding-right:10px; }
+
+/* main content */
 .main{
     position: relative;
     background: #fff;
-    width: 800px;
+    width: 100%;
     top: 0;
     margin: 0 auto;
     overflow: hidden;
     clear: both;
     padding: 32px 0 32px;
-    min-height: 600px;
+    min-height: 100%;
 }
+/* footer */
 .footer{
     position: relative;
     width: 100%;
@@ -104,17 +108,44 @@ ul li{ list-style-type: none;}
     bottom: 0;
     background: #232323;
 }
-.login-btn{
-    float: right;
-    display: block;
-    font-size: 13px;
-    height: 47px;
-    line-height: 47px;
-    padding-right: 20px;
-}
+
+/* form */
 .placeholder{
     position: absolute;
     top: 7px;
     left: 24px;
     color: #D4D4D4;
+}
+
+/* mobile styles */
+.menu-mob{
+    display: none;
+}
+.header-btn{
+    color: #5bc0de;
+    font-size: 24px;
+    height: 46px;
+    padding: 10px;
+}
+.menu-mob{
+    position: absolute;
+    text-align: right;
+    font-size: 16px;
+    width: 100px;
+    right: 78px;
+    top: 50px;
+    z-index: 99;
+    background-color: #fff;
+    border: 1px solid #ebebeb;
+    border-radius: 2px;
+    box-shadow: 2px 2px 2px #888888;
+}
+.menu-mob li{ padding: 10px; }
+.menu-mob li a{ color: #5bc0de; }
+.home-btn-mb{
+    display: none;
+    color: #5bc0de;
+    font-size: 24px;
+    height: 46px;
+    padding: 10px;
 }
