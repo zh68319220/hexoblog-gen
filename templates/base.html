@@ -6,13 +6,16 @@
 
     <link rel="stylesheet" href="{{static_url('css/base.css')}}" type="text/css">
     <link rel="stylesheet" href="{{static_url('css/adapt.css')}}" type="text/css">
+    <link href="http://cdn.bootcss.com/unslider/2.0.3/css/unslider.css" rel="stylesheet">
+    <link href="http://cdn.bootcss.com/unslider/2.0.3/css/unslider-dots.css" rel="stylesheet">
     <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{static_url('css/jquery.fancybox.css')}}" type="text/css">
+    <link href="http://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.css" rel="stylesheet">
 
-    <script src="http://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
-    <script type="text/javascript" src="{{static_url('js/jquery.fancybox.js')}}"></script>
-    <script type="text/javascript" src="{{static_url('js/base.js')}}"></script>
+    <script src="http://cdn.bootcss.com/jquery/1.7.1/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/unslider/2.0.3/js/unslider-min.js"></script>
+    <script src="http://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js"></script>
     <script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="123131" data-redirecturi="http://baidu.com" charset="utf-8"></script>
+    <script type="text/javascript" src="{{static_url('js/base.js')}}"></script>
 </head>
 <body>
     <div id="header">
@@ -42,13 +45,9 @@
         <div class="header-mask"></div>
     </div>
     <div class="fake-header"></div>
-    <div class="container-fluid">
-        <center>
-        <div class="main">
-            {% block body %}{% end %}
-        </div>
-        </center>
-    </div>
+
+    {% block body %}{% end %}
+
     <div class="footer"></div>
 
 <script type="text/html" id="login-page">

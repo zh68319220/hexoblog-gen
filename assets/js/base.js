@@ -15,6 +15,7 @@ $(function(){
                     QC.Login({
                        btnId:"qqLoginBtn"    //插入按钮的节点id
                     });
+                    $.activePlaceHolder();
                     $("#login").on("click", function (e) {
                         e.preventDefault();
                         e.stopPropagation();
@@ -28,13 +29,13 @@ $(function(){
     $.extend({
         activePlaceHolder: function () {
             // placeholder
-            $("input").live("click", function (e) {
+            $("input").on("click", function (e) {
                 $( "#" + $(this).attr("name") + "-span" ).hide();
             });
-            $("input").live("blur", function (e) {
+            $("input").on("blur", function (e) {
                 $( "#" + $(this).attr("name") + "-span" ).show();
             });
-            $(".placeholder").live("click", function (e) {
+            $(".placeholder").on("click", function (e) {
                 $( "#" + $(this).attr("id").split('-span')[0] ).focus();
                 $(this).hide();
             });
@@ -42,7 +43,6 @@ $(function(){
     });
 
     // base actions
-    $.activePlaceHolder();
     $("#login-btn").bind("click", function (e) {
         e.preventDefault();
         $("#login-page").showLoginModal();
@@ -59,4 +59,5 @@ $(function(){
     $("body").bind("touchstart", function (e) {
         $("#menu-mob").hide();
     });
+    $(".slide").unslider({dots: true});
 });
