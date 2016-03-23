@@ -1,5 +1,5 @@
 /* adapt mobile screen */
-@media screen  and (max-width: 599px) {
+@media screen  and (max-width: 768px) {
     #menu{ display: none; }
     .login-btn{ display: none; }
     .header-btn{ display: block; }
@@ -10,7 +10,11 @@
     .main{ width: 100%;padding: 32px; }
     .slide{ width:100% !important; }
 }
-@media screen  and (min-width: 600px) {
+@media screen  and (max-width: 455px) and (min-width: 1px) {
+    #title-mb{ display: none; }
+    .search{ width: 200px; }
+}
+@media screen  and (min-width: 769px) {
     #menu{ display: block; }
     .login-btn{ display: block; }
     .header-btn{ display: none; }
