@@ -5,6 +5,10 @@
     .header-btn{ display: block; }
     #title-pc{ display: none; }
     #title-mb{ display: block; }
+
+    .header-center{ margin: auto;width: 100%; }
+    .main{ width: 100%;padding: 32px; }
+    .slide{ width:100% !important; }
 }
 @media screen  and (min-width: 600px) {
     #menu{ display: block; }
@@ -12,4 +16,8 @@
     .header-btn{ display: none; }
     #title-pc{ display: block; }
     #title-mb{ display: none; }
+
+    .header-center{ margin: auto;width:1000px; }
+    .main{ width: 1000px;margin: 32px auto; }
+    .slide{ width: 1000px !important;margin: auto; }
 }
