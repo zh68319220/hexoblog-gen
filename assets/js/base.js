@@ -25,7 +25,7 @@ $(function(){
             });
         },
         setHighlight: function (className) {
-            $("#menu li [name="+this.attr('data-hl')+"]").addClass(className);
+            $("#"+this.attr("id")+" li [name="+this.attr('data-hl')+"]").addClass(className);
         }
     });
     // class extend func
@@ -68,4 +68,5 @@ $(function(){
         unslider.data('unslider')[fn]();
     });
     $("#menu").setHighlight("menu-highlight");
+    $("#cates").setHighlight("cate-highlight");
 });

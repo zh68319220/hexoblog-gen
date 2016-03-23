@@ -9,6 +9,9 @@
     .header-center{ margin: auto;width: 100%; }
     .main{ width: 100%;padding: 32px; }
     .slide{ width:100% !important; }
+
+    .slide-right{ display: none; }
+    .slide-left{ width: 100%; }
 }
 @media screen  and (max-width: 455px) and (min-width: 1px) {
     #title-mb{ display: none; }
