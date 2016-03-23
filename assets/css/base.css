@@ -25,6 +25,7 @@ body{ background-color: #ebebeb; }
     font-size: 24px;
     height: 46px;
     line-height: 46px;
+    padding-left: 25px;
 }
 #header{
     position: fixed;
@@ -52,7 +53,7 @@ body{ background-color: #ebebeb; }
     -khtml-opacity: 0.8;
     -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=1);
     filter: alpha(opacity=80);
-    background-color: #fff;
+    background-color: #363d4c;
 }
 .fake-header{
     position: relative;
@@ -62,19 +63,19 @@ body{ background-color: #ebebeb; }
 }
 #menu{
     position: relative;
-    width: 315px;
+    width: 500px;
     height: 46px;
     line-height: 46px;
     top: 0;
     left: 100px;
 }
 #menu li{ float: left; }
-#menu li a{
+.menuitem{
     display: block;
     padding: 0 22px 0;
     height: 46px;
     line-height: 46px;
-    color: #5bc0de;
+    color: #838fa8;
 
     -webkit-transition: all linear .2s;
     -moz-transition: all linear .2s;
@@ -82,7 +83,12 @@ body{ background-color: #ebebeb; }
     -o-transition: all linear .2s;
     transition: all linear .2s;
 }
-#menu li a:hover{ color: #fff;background: #0583ff; }
+#menu li a:hover{ color: #fff; }
+.menu-highlight{
+    background-color: #fff;
+    color: #5bc0de;
+    border-bottom: 2px solid #fff;
+}
 .login-btn{
     font-size: 18px;
     height: 46px;

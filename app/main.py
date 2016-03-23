@@ -9,7 +9,7 @@ class main(tornado.web.RequestHandler):
 
 class MainHandler(main):
     def get(self):
-        self.render("main.html")
+        self.render("main.html", highlight='main')
         # try:
         #     with self.db().cursor() as cursor:
         #         # Read a single record
@@ -22,11 +22,11 @@ class MainHandler(main):
 
 class AboutHandler(main):
     def get(self):
-        self.render("about.html")
+        self.render("about.html", highlight='about')
 
 class ExampleHandler(main):
     def get(self):
-        self.render("example.html")
+        self.render("example.html", highlight='example')
 
 class LoginHandler(main):
     def get(self):

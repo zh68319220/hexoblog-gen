@@ -23,6 +23,9 @@ $(function(){
                     });
                 }
             });
+        },
+        setHighlight: function () {
+            $("#menu li [name="+this.attr('data-hl')+"]").addClass("menu-highlight");
         }
     });
     // class extend func
@@ -62,7 +65,7 @@ $(function(){
     var unslider = $(".slide").unslider({dots: true, infinite: true, delay: 3000,height: 300});
     $('.unslider-arrow').click(function() {
         var fn = this.className.split(' ')[1];
-        //  Either do unslider.data('unslider').next() or .prev() depending on the className
         unslider.data('unslider')[fn]();
     });
+    $("#menu").setHighlight();
 });
