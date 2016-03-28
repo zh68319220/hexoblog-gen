@@ -1,0 +1,49 @@
+/* main content */
+.container-fluid {
+  height: 100%; }
+
+.main {
+  position: relative;
+  top: 0;
+  overflow: hidden;
+  clear: both;
+  height: auto;
+  width: 1000px;
+  margin: 32px auto; }
+
+center {
+  background: #f0f2f7; }
+
+#cates {
+  position: relative;
+  width: 100%;
+  padding-bottom: 20px;
+  height: 100px; }
+
+#cates ul li {
+  float: left;
+  font-size: 18px;
+  height: 30px;
+  margin-right: 50px;
+  overflow: hidden; }
+
+#cates ul li a {
+  display: block;
+  line-height: 30px; }
+
+#cates ul li a:hover {
+  color: #5bc0de; }
+
+.cate-highlight {
+  color: #5bc0de; }
+
+.bloglist {
+  position: relative;
+  width: 100%; }
+
+.bloglist ul li {
+  float: left;
+  width: 30%;
+  margin-right: 3.33%;
+  margin-bottom: 20px;
+  background-color: #fff; }

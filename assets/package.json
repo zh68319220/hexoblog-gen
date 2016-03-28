@@ -6,9 +6,12 @@
     "email": "420866750@qq.com"
   },
   "license": "ISC",
-  "description": "just test",
+  "description": "blog front end",
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.2.0",
+    "gulp-uglify": "^1.5.3",
+    "gulp-rename": "^1.2.2"
   },
   "repository": {
     "type": "git",
