@@ -1,4 +1,5 @@
 /* main content */
+$themeColor: #5bc0de;
 .container-fluid{
     height: 100%;
 }
@@ -31,13 +32,15 @@ center{
     display: block;
     line-height: 30px;
 }
-#cates ul li a:hover{ color: #5bc0de; }
+#cates ul li a:hover{ color: $themeColor; }
 .cate-highlight{
-    color: #5bc0de;
+    color: $themeColor;
 }
 .bloglist{
     position: relative;
     width: 100%;
+    .blog-title{ font-weight: bold; }
+    .blog-title:hover{ color: $themeColor; }
 }
 .bloglist ul li{
     float: left;
