@@ -40,6 +40,10 @@ center {
 .bloglist {
   position: relative;
   width: 100%; }
+  .bloglist .blog-title {
+    font-weight: bold; }
+  .bloglist .blog-title:hover {
+    color: #5bc0de; }
 
 .bloglist ul li {
   float: left;
