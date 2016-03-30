@@ -9,6 +9,7 @@ class system(tornado.web.RequestHandler):
 
 class MainHandler(system):
     def get(self):
+        l.info(self.current_user)
         if self.current_user:
             self.render("sys.html")
         else:
