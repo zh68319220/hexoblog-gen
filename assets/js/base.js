@@ -62,11 +62,5 @@ $(function(){
     $("body").bind("touchstart", function (e) {
         $("#menu-mob").hide();
     });
-    var unslider = $(".slide").unslider({dots: true, infinite: true, delay: 6666,height: 300});
-    $('.unslider-arrow').click(function() {
-        var fn = this.className.split(' ')[1];
-        unslider.data('unslider')[fn]();
-    });
     $("#menu").setHighlight("menu-highlight");
-    $("#cates").setHighlight("cate-highlight");
 });

@@ -1,7 +1,6 @@
 #encoding=utf-8
 import tornado.web
 import logging as l
-# import pymysql.cursors
 
 class main(tornado.web.RequestHandler):
     def db(self):
@@ -9,16 +8,13 @@ class main(tornado.web.RequestHandler):
 
 class MainHandler(main):
     def get(self):
-        self.render("main.html", highlight='main')
-        # try:
-        #     with self.db().cursor() as cursor:
-        #         # Read a single record
-        #         sql = "SELECT `id`, `name` FROM `category` WHERE `is_del`= 0"
-        #         cursor.execute(sql)
-        #         result = cursor.fetchall()
-        #         self.render("index.html", result=result)
-        # finally:
-        #     pass
+        cursor = self.db().cursor()
+        # Read records
+        sql = "SELECT `id`, `name` FROM `category` WHERE `is_del`= 0"
+        cursor.execute(sql)
+        result = cursor.fetchall()
+        l.info(result)
+        self.render("main.html", result=result, highlight='main')
 
 class AboutHandler(main):
     def get(self):

@@ -9,9 +9,7 @@ class system(tornado.web.RequestHandler):
 
 class MainHandler(system):
     def get(self):
-        self.u = self.get_secure_cookie('u')
-        if self.u:
+        if self.current_user:
             self.render("sys.html")
         else:
-            self.render("sys.html")
-            # self.redirect('/login')
+            self.redirect('/login')

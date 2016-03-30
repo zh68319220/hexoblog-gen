@@ -21,9 +21,9 @@
             <a href="javascript:;" id="login-btn" class="login-btn pull-right fancybox">
                 <i class="glyphicon glyphicon-log-in"></i>登录</a>
             <ul id="menu" data-hl="{{ highlight }}">
-                <li><a name="main" class="menuitem" href="/">首页</a></li>
-                <li><a name="example" class="menuitem" href="/examples">案例</a></li>
-                <li><a name="about" class="menuitem" href="/about">关于</a></li>
+                {% for r in result %}
+                    <li><a name="main" class="menuitem" href="/">{{ r['name'] }}</a></li>
+                {% end %}
             </ul>
 
             <a href="/" id="title-mb" class="home-btn-mb pull-left"><i class="glyphicon glyphicon-home"></i></a>
@@ -33,9 +33,9 @@
             <div id="menu-btn" class="header-btn pull-right">
                 <i class="glyphicon glyphicon-align-justify"></i>
                 <ul id="menu-mob" class="menu-mob pull-right">
-                    <li><a href="/">首页</a></li>
-                    <li><a href="/examples">案例</a></li>
-                    <li><a href="/about">关于</a></li>
+                    {% for r in result %}
+                        <li><a href="/">{{ r['name'] }}</a></li>
+                    {% end %}
                 </ul>
             </div>
 
