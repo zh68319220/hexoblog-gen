@@ -1,3 +1,5 @@
+$themeColor: #5bc0de;
+.clearfix{ overflow:auto;_height:1%; }
 /* common */
 * {
     padding: 0;
@@ -8,17 +10,7 @@ a:link{ text-decoration:none !important; }
 a:visited{ text-decoration:none !important; }
 a:hover{ text-decoration: none !important; }
 ul li{ list-style-type: none;}
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td {
-    margin: 0;
-    padding: 0;
-    outline: 0;
-    border: 0;
-    background: transparent;
-    vertical-align: baseline;
-    font-size: 100%;
-}
-body{ background-color: #ebebeb; }
-
+body{ background-color: #fff; }
 /* header */
 
 #header{
@@ -27,7 +19,7 @@ body{ background-color: #ebebeb; }
     width: 100%;
     z-index: 999;
     .home-btn{
-        color: #5bc0de;font-size: 24px;
+        color: $themeColor;font-size: 24px;
         height: 46px;line-height: 46px; }
     .header-center{
         position: relative;height: 46px;
@@ -47,7 +39,7 @@ body{ background-color: #ebebeb; }
         width: 500px;height: 46px;
         line-height: 46px;top: 0;left: 45px;
         li { float: left; }
-        li a:hover{ color: #5bc0de; } }
+        li a:hover{ color: $themeColor; } }
     .menuitem{
         display: block;padding: 0 22px 0;
         height: 46px;line-height: 46px;
@@ -56,12 +48,12 @@ body{ background-color: #ebebeb; }
         -ms-transition: all linear .2s;-o-transition: all linear .2s;
         transition: all linear .2s; }
     .menu-highlight{
-        background-color: #fff;color: #5bc0de;
+        background-color: #fff;color: $themeColor;
         border-bottom: 2px solid #fff; }
     .login-btn{
         font-size: 18px;height: 46px;
-        line-height: 46px;color: #5bc0de;
-        i { font-size: 18px;color: #5bc0de;padding-right:10px; } }
+        line-height: 46px;color: $themeColor;
+        i { font-size: 18px;color: $themeColor;padding-right:10px; } }
 }
 .fake-header{
     position: relative;
@@ -70,74 +62,13 @@ body{ background-color: #ebebeb; }
     background: #fff;
 }
 
-/* slider */
-.slide {
-    position: relative;
-    overflow: auto;
-    width:1000px;
-    margin: auto;
-    height: 300px;
-    background: #fff;
-    color: #666;
-    text-align: center;
-    ul{
-        height: 300px;
-        li{ float: left;height: 100%;list-style: none; }
-    }
-    .unslider-arrow {
-        position: absolute;
-        top: 125px;
-        width: 32px;
-        height: 32px;
-
-        -webkit-border-radius:50%;
-        -moz-border-radius:50%;
-        border-radius:50%;
-        opacity: .6;
-        background-color: #fff;
-        color:#5bc0de;
-        i{ position: absolute;font-size: 22px;top: 5px;left: 5px; }
-    }
-    .unslider-arrow.next{ right: 0; }
-    .unslider-arrow.prev{ left: 0; }
-    .dots{ 
-        position: absolute;
-        left:0;
-        right:0;
-        bottom: 30px;
-        li {display: inline-block;width: 10px;
-            height: 10px;margin: 0 4px;text-indent: -999em;
-            border: 2px solid #5bc0de;border-radius: 6px;
-            cursor: pointer;opacity: .4;-webkit-transition: background .5s, opacity .5s;
-            -moz-transition: background .5s, opacity .5s;transition: background .5s, opacity .5s;
-        }
-        li.active { background: #fff;opacity: 1; }
-    }
-    .slide-left{
-        float: left;
-        width: 50%;
-        height: 300px;
-        padding: 25px 0 25px 25px;
-    }
-    .slide-right{
-        float: left;
-        width: 50%;
-        height: 300px;
-        padding: 25px 50px 25px 0;
-
-        p{  width: 450px;height: 150px;
-            line-height: 24px;overflow:hidden;
-            text-overflow:ellipsis; } }
-}
-
 /* searching */
 .search{
-    position: absolute;
-    right: 100px;
-    top: 0;
     width: 300px;
     height: 46px;
     padding-top: 5px;
+    padding-right: 20px;
+    float: right;
     span{ font-size:20px; }
 }
 /* footer */
@@ -163,7 +94,7 @@ body{ background-color: #ebebeb; }
     display: none;
 }
 .header-btn{
-    color: #5bc0de;
+    color: $themeColor;
     font-size: 24px;
     height: 46px;
     padding: 10px;
@@ -182,11 +113,11 @@ body{ background-color: #ebebeb; }
     border-radius: 2px;
     box-shadow: 2px 2px 2px #888888;
     li{ padding: 10px; }
-    li a{ color: #5bc0de; }
+    li a{ color: $themeColor; }
 }
 .home-btn-mb{
     display: none;
-    color: #5bc0de;
+    color: $themeColor;
     font-size: 24px;
     height: 46px;
     padding: 10px;
