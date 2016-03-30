@@ -8,4 +8,6 @@
 *.pyc
 .idea/*
 __pycache__/
-__assets__/node_modules/
+/node_modules/*
+/js/*
+/scss/*
