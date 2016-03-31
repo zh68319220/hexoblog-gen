@@ -1,18 +1,17 @@
 #encoding=utf-8
-import tornado.web
+import app.base as base
 import logging as l
 
-class main(tornado.web.RequestHandler):
-    def cursor(self):
-        return self.application.db.cursor()
+class main(base.BaseHandler):
+    pass
 
 class MainHandler(main):
     def get(self):
-        cursor = self.cursor()
         # Read records
-        sql = "SELECT `id`, `name` FROM `category` WHERE `is_del`= 0"
-        cursor.execute(sql)
-        result = cursor.fetchall()
+        # sql = "SELECT `id`, `name` FROM `category` WHERE `is_del`= 0"
+        # cursor.execute(sql)
+        # result = cursor.fetchall()
+        result = []
         self.render("main.html", result=result, highlight='main')
 
 class AboutHandler(main):
@@ -25,17 +24,14 @@ class ExampleHandler(main):
 
 class LoginHandler(main):
     def get(self):
-        self.render("login.html")
+        self.render("login.html", info=None)
     def post(self):
         username = self.get_argument('username')
         userpsw = self.get_argument('password')
-        cursor = self.cursor()
-        # Read records
-        sql = "SELECT * FROM `user` WHERE `username`= " + username + " and" + "`password`=" + userpsw
-        cursor.execute(sql)
-        result = cursor.fetchone()
-        if result is None:
-            self.redirect('/login')
+        condi = [{'key': 'username', 'value': username}, {'key': 'password', 'value': userpsw}]
+        rs = self.db().findone("user", condi)
+        if rs is None:
+            self.render('login.html', info="用户名或密码不正确!")
         else:
-            self.current_user = result['id']
+            self.set_secure_cookie('u', str(rs['id']))
             self.redirect('/sys')

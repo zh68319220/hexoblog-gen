@@ -1,0 +1,24 @@
+# encoding=utf-8
+# db functions
+import tornado.web
+import logging as l
+
+class base(tornado.web.RequestHandler):
+    def cursor(self):
+        return self.application.db.cursor()
+
+class DB(base):
+    def findone(self, table, params):
+        cursor = self.cursor()
+        sql = "SELECT * FROM `" + table + "` WHERE "
+        for ind, p in enumerate(params):
+            if ind == (len(params) - 1):
+                sql += "`" + p['key'] + "`='" + p['value'] + "' "
+            else:
+                sql += "`" + p['key'] + "`='" + p['value'] + "' and "
+        cursor.execute(sql)
+        return cursor.fetchone()
+    def findmany(self):
+        pass
+    def exist(self):
+        pass

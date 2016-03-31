@@ -38,6 +38,9 @@ $(function(){
             $("input").on("blur", function (e) {
                 if( $(this).val() == ""){$( "#" + $(this).attr("name") + "-span" ).show();}
             });
+            $("input").on("focus", function (e) {
+                $( "#" + $(this).attr("name") + "-span" ).hide();
+            });
             $(".placeholder").on("click", function (e) {
                 $( "#" + $(this).attr("id").split('-span')[0] ).focus();
                 $(this).hide();

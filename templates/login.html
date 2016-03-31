@@ -33,6 +33,10 @@
     <form class="form-horizontal" method="post">
         {% raw xsrf_form_html() %}
         <h3>登录</h3>
+        {%if info %}
+            <div class="alert alert-danger">{{ info }}</div>
+        {%else%}
+        {%end%}
         <div class="form-group">
             <div class="col-sm-12">
                 <input type="text" class="form-control" name="username" id="username">
