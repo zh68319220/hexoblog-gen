@@ -8,17 +8,36 @@ $(function(){
                 modal: false,
                 fitToView: true,
                 width: 450,
-                height: 300,
+                height: 500,
                 autoSize: false,
                 showCloseButton: true,
                 afterShow: function () {
                     QC.Login({
-                       btnId:"qqLoginBtn"    //插入按钮的节点id
+                       btnId:"qqLoginBtn" //插入按钮的节点id
                     });
                     $.activePlaceHolder();
-                    $("#login").on("click", function (e) {
+                    $("#login-from").on('submit', function (e) {
                         e.preventDefault();
                         e.stopPropagation();
+                        var pass = true;
+                        if(!$("#password").validatePsw("error-psw", "密码格式不正确")) pass = false;
+                        if(!$("#username").validateUsername("error-username", "用户名格式不正确")) pass = false;
+                        if(pass){
+                            $.ajax({
+                                url: '/loginAJ',
+                                type: 'POST',
+                                data: {'username': $("#username").val(), 'password': $("#password").val()},
+                                success: function(data){
+                                    if(data.status){
+                                        location.reload();
+                                    }
+                                    else{
+                                        $("#error-username").text("用户名或密码不正确!");
+                                        $("#error-username").show();
+                                    }
+                                }
+                            });
+                        }
                         return false;
                     });
                 }
@@ -26,6 +45,26 @@ $(function(){
         },
         setHighlight: function (className) {
             $("#"+this.attr("id")+" li [name="+this.attr('data-hl')+"]").addClass(className);
+        },
+        validatePsw: function (selector, info){
+            $("#" + selector).hide();
+            if( $(this).val().length >= 8 && /^[a-z0-9]*$/g.test($(this).val()) )
+                return true;
+            else {
+                $("#" + selector).text(info);
+                $("#" + selector).show();
+                return false;
+            }
+        },
+        validateUsername: function (selector, info){
+            $("#" + selector).hide();
+            if( $(this).val().length >= 6 && /^[a-z0-9]*$/g.test($(this).val()) )
+                return true;
+            else {
+                $("#" + selector).text(info);
+                $("#" + selector).show();
+                return false;
+            }
         }
     });
     // class extend func
@@ -49,20 +88,20 @@ $(function(){
     });
 
     // base actions
-    $("#login-btn").bind("click", function (e) {
+    $("#login-btn").on("click", function (e) {
         e.preventDefault();
         $("#login-page").showLoginModal();
     });
-    $("#login-btn2").bind("click", function (e) {
+    $("#login-btn2").on("click", function (e) {
         e.preventDefault();
         $("#login-page").showLoginModal();
     });
-    $("#menu-btn").bind("touchstart", function (e) {
+    $("#menu-btn").on("touchstart", function (e) {
         e.preventDefault();
         e.stopPropagation();
         $("#menu-mob").show();
     });
-    $("body").bind("touchstart", function (e) {
+    $("body").on("touchstart", function (e) {
         $("#menu-mob").hide();
     });
     $("#menu").setHighlight("menu-highlight");

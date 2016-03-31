@@ -1,11 +1,13 @@
 # coding: utf-8
-import app.main as index
+import app.main as main
 import app.sys as sys
 
 urls = [
-    (r'^/$', index.MainHandler),
-    (r'^/examples', index.ExampleHandler),
-    (r'^/about', index.AboutHandler),
+    (r'^/$', main.MainHandler),
+    (r'^/examples', main.ExampleHandler),
+    (r'^/about', main.AboutHandler),
     (r'^/sys', sys.MainHandler),
-    (r'^/login', index.LoginHandler)
+    (r'^/login', main.LoginHandler),
+    (r'^/loginAJ', main.LoginAJHandler),
+    (r'^/logout', main.LogoutHandler)
 ]

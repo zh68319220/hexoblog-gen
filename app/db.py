@@ -18,7 +18,15 @@ class DB(base):
                 sql += "`" + p['key'] + "`='" + p['value'] + "' and "
         cursor.execute(sql)
         return cursor.fetchone()
-    def findmany(self):
-        pass
+    def findmany(self, table, params):
+        cursor = self.cursor()
+        sql = "SELECT * FROM `" + table + "` WHERE "
+        for ind, p in enumerate(params):
+            if ind == (len(params) - 1):
+                sql += "`" + p['key'] + "`='" + p['value'] + "' "
+            else:
+                sql += "`" + p['key'] + "`='" + p['value'] + "' and "
+        cursor.execute(sql)
+        return cursor.fetchall()
     def exist(self):
         pass
