@@ -5,16 +5,16 @@
 }
 a{ text-decoration: none; }
 ul li{ list-style-type: none;}
-
+.clearfix{ overflow:auto;_height:1%; }
 /* main content */
 .main{
     position: relative;
-    width: 800px;
-    min-width: 800px;
-    min-height: 300px;
+    width: 1000px;
+    min-width: 1000px;
+    min-height: 480px;
     left: 50%;
     margin-top: 100px;
-    margin-left: -400px;
+    margin-left: -500px;
     overflow: hidden;
     /* dashboard menu */
     .menu{
@@ -44,13 +44,19 @@ ul li{ list-style-type: none;}
     .content{
         position: relative;
         float: left;
-        width: 600px;
+        width: 800px;
         height: 480px;
         text-align: center;
         background: #eee;
     }
 }
-
+#editor{
+    width: 100%;
+    height: 500px;
+    overflow: scroll;
+}
+.wangEditor-drop-panel{ .content { width: 100%;height: 111px; } }
+.wangEditor-menu-container .menu-item { overflow: hidden; }
 /* loading */
 .loading{
     display: none;

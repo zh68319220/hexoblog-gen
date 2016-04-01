@@ -7,8 +7,10 @@ var StateMixin = ReactRouter.State;
 
 var App = React.createClass({
     handleMenuClick: function(event) {
-		document.getElementById("loading").style.display = "block";
-        console.log(this);
+		//document.getElementById("loading").style.display = "block";
+		var editor = new wangEditor('editor');
+		editor.config.uploadImgUrl = '/upload';
+    	editor.create();
     },
 	render: function () {
 		return (
@@ -87,7 +89,7 @@ var Blogs = React.createClass({
 var ABlog = React.createClass({
 	render: function () {
 		return (
-			<div>新增文章</div>
+			<div id="editor"></div>
 		)
 	}
 });
