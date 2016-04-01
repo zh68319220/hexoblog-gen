@@ -9,7 +9,7 @@ var App = React.createClass({
     handleMenuClick: function(event) {
 		//document.getElementById("loading").style.display = "block";
 		var editor = new wangEditor('editor');
-		editor.config.uploadImgUrl = '/upload';
+		editor.config.uploadImgUrl = '/uploads';
     	editor.create();
     },
 	render: function () {
