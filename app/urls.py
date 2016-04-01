@@ -6,8 +6,9 @@ urls = [
     (r'^/$', main.MainHandler),
     (r'^/examples', main.ExampleHandler),
     (r'^/about', main.AboutHandler),
-    (r'^/sys', sys.MainHandler),
     (r'^/login', main.LoginHandler),
     (r'^/loginAJ', main.LoginAJHandler),
-    (r'^/logout', main.LogoutHandler)
+    (r'^/logout', main.LogoutHandler),
+    (r'^/sys', sys.MainHandler),
+    (r'^/sys/upload', sys.UploadHandler)
 ]
