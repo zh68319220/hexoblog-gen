@@ -5,21 +5,23 @@
 }
 a{ text-decoration: none; }
 ul li{ list-style-type: none;}
+html,body{
+    width: 100%;
+    height: auto;
+}
 .clearfix{ overflow:auto;_height:1%; }
 /* main content */
 .main{
     position: relative;
     width: 1000px;
-    min-width: 1000px;
     min-height: 480px;
-    left: 50%;
-    margin-top: 100px;
-    margin-left: -500px;
+    margin: 30px auto;
     overflow: hidden;
     /* dashboard menu */
     .menu{
         position: relative;
-        float: left;
+        display: table-cell;
+        vertical-align: top;
         width: 200px;
         text-align: center;
 
@@ -43,17 +45,25 @@ ul li{ list-style-type: none;}
     /* right content */
     .content{
         position: relative;
-        float: left;
+        display: table-cell;
+        vertical-align: top;
         width: 800px;
-        height: 480px;
+        height: 600px;
         text-align: center;
         background: #eee;
     }
 }
 #editor{
     width: 100%;
-    height: 500px;
+    height: 600px;
     overflow: scroll;
+}
+.addblog{
+    .btn-blog{
+        position: absolute;top: 15px;
+        right: 20px;width: 56px;
+        height: 33px;z-index: 999;
+    }
 }
 .wangEditor-drop-panel{ .content { width: 100%;height: 111px; } }
 .wangEditor-menu-container .menu-item { overflow: hidden; }

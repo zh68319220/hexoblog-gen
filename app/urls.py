@@ -10,5 +10,6 @@ urls = [
     (r'^/loginAJ', main.LoginAJHandler),
     (r'^/logout', main.LogoutHandler),
     (r'^/sys', sys.MainHandler),
+    (r'^/sys/addblog', sys.BlogHandler),
     (r'^/sys/upload', sys.UploadHandler)
 ]

@@ -4,4 +4,14 @@
  */
 $(function () {
     $.activePlaceHolder();
+    $("body").on("click","#btn-blog", function (e) {
+        $.ajax({
+            url: '/sys/addblog',
+            type: 'POST',
+            data: { html: $("#editor").html() },
+            success: function (data) {
+
+            }
+        });
+    });
 });

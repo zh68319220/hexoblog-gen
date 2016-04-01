@@ -30,3 +30,18 @@ class DB(base):
         return cursor.fetchall()
     def exist(self):
         pass
+    def addone(self, table, params):
+        cursor = self.cursor()
+        sql = "INSERT INTO `" + table + "` ("
+        for ind, p in enumerate(params):
+            if ind == (len(params) - 1):
+                sql += "`" + p['key'] + "`)"
+            else:
+                sql += "`" + p['key'] + "`,"
+        sql += " VALUES ("
+        for ind, p in enumerate(params):
+            if ind == (len(params) - 1):
+                sql += "`" + p['value'] + "`)"
+            else:
+                sql += "`" + p['value'] + "`,"
+        cursor.execute(sql)

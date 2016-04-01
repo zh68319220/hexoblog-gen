@@ -7,10 +7,7 @@ var StateMixin = ReactRouter.State;
 
 var App = React.createClass({
     handleMenuClick: function(event) {
-		//document.getElementById("loading").style.display = "block";
-		var editor = new wangEditor('editor');
-		editor.config.uploadImgUrl = '/sys/upload';
-    	editor.create();
+
     },
 	render: function () {
 		return (
@@ -20,34 +17,34 @@ var App = React.createClass({
 						<Link className="nav-title" to="main">
 							<i className="glyphicon glyphicon-user"></i>用户管理</Link>
 						<li>
-                            <Link to="adduser">增加用户</Link>
+                            <Link id="adduser" to="adduser">增加用户</Link>
                         </li>
                         <li>
-                            <Link to="users">用户列表</Link>
+                            <Link id="users" to="users">用户列表</Link>
                         </li>
 						<Link className="nav-title" to="main">
 							<i className="glyphicon glyphicon-list-alt"></i>文章管理</Link>
 						<li>
-                            <Link to="addblog">增加文章</Link>
+                            <Link id="addblog" to="addblog">增加文章</Link>
                         </li>
 						<li>
-                            <Link to="blogs">文章列表</Link>
+                            <Link id="blogs" to="blogs">文章列表</Link>
                         </li>
 						<Link className="nav-title" to="main">
 							<i className="glyphicon glyphicon-comment"></i>评论管理</Link>
 						<li>
-                            <Link to="coms">评论列表</Link>
+                            <Link id="coms" to="coms">评论列表</Link>
                         </li>
 						<Link className="nav-title" to="main">
 							<i className="glyphicon glyphicon-cog"></i>系统设置</Link>
 						<li>
-                            <Link to="slides">幻灯片管理</Link>
+                            <Link id="slides" to="slides">幻灯片管理</Link>
                         </li>
 						<li>
-                            <Link to="tags">标签管理</Link>
+                            <Link id="tags" to="tags">标签管理</Link>
                         </li>
 						<li>
-                            <Link to="cates">分类管理</Link>
+                            <Link id="cates" to="cates">分类管理</Link>
                         </li>
                     </ul>
 				</div>
@@ -86,10 +83,28 @@ var Blogs = React.createClass({
 	}
 });
 
+var editor;
 var ABlog = React.createClass({
+	componentDidMount: function(){
+		//加载后
+		editor = new wangEditor('editor');
+		editor.config.uploadImgUrl = '/sys/upload';
+		editor.create();
+	},
+	componentWillUnmount: function () {
+		//消失前
+		if(editor) editor.destroy();
+	},
 	render: function () {
 		return (
-			<div id="editor"></div>
+			<div className="addblog">
+				<div id="btn-blog" className="btn btn-default pull-right btn-blog">添加</div>
+				<div className="col-sm-12">
+                    <input type="text" className="form-control" name="username" id="username" />
+                    <span id="username-span" className="placeholder">请输入用户名</span>
+                </div>
+				<div id="editor"></div>
+			</div>
 		)
 	}
 });
