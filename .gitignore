@@ -3,11 +3,11 @@
 *.via
 *.tmp
 *.err
-*.txt
 *.pyd
 *.pyc
 .idea/*
 __pycache__/
+assets/node_modules/
 /node_modules/*
 /js/*
 /scss/*
