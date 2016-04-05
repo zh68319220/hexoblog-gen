@@ -41,7 +41,8 @@ class DB(base):
         sql += " VALUES ("
         for ind, p in enumerate(params):
             if ind == (len(params) - 1):
-                sql += "`" + p['value'] + "`)"
+                sql += "'" + p['value'] + "')"
             else:
-                sql += "`" + p['value'] + "`,"
+                sql += "'" + p['value'] + "',"
+        l.info(sql)
         cursor.execute(sql)

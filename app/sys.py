@@ -15,12 +15,15 @@ class MainHandler(system):
             self.redirect('/login')
 
 class BlogHandler(system):
+    def check_xsrf_cookie(self):
+        pass
     def get(self):
         pass
     def post(self):
         html = self.get_argument('html')
         title = ''
-        params = { 'title': title, 'content': html, 'user_id': self.current_user.id }
+        params = [{'key': 'title', 'value': title}, {'key': 'content', 'value': html}, {'key': 'user_id', 'value': str(self.current_user['id'])}, {'key': 'category_id', 'value': '0'}]
+        self.db().addone("blog", params)
 
 class UploadHandler(system):
     '''

@@ -7,7 +7,7 @@ var StateMixin = ReactRouter.State;
 
 var App = React.createClass({
     handleMenuClick: function(event) {
-
+		if(event.target.id == "addblog") location.reload();
     },
 	render: function () {
 		return (
@@ -83,28 +83,10 @@ var Blogs = React.createClass({
 	}
 });
 
-var editor;
 var ABlog = React.createClass({
-	componentDidMount: function(){
-		//加载后
-		editor = new wangEditor('editor');
-		editor.config.uploadImgUrl = '/sys/upload';
-		editor.create();
-	},
-	componentWillUnmount: function () {
-		//消失前
-		if(editor) editor.destroy();
-	},
 	render: function () {
 		return (
-			<div className="addblog">
-				<div id="btn-blog" className="btn btn-default pull-right btn-blog">添加</div>
-				<div className="col-sm-12">
-                    <input type="text" className="form-control" name="username" id="username" />
-                    <span id="username-span" className="placeholder">请输入用户名</span>
-                </div>
-				<div id="editor"></div>
-			</div>
+			<Editor />
 		)
 	}
 });
@@ -145,6 +127,27 @@ var Main = React.createClass({
 	render: function () {
 		return (
 			<div>main</div>
+		)
+	}
+});
+
+var Editor = React.createClass({
+	componentDidMount: function(){
+		//加载后
+		this.editor = new wangEditor('editor');
+		this.editor.config.uploadImgUrl = '/sys/upload';
+		this.editor.create();
+	},
+	componentWillUnmount: function () {
+		//消失前
+		this.editor = null;
+	},
+	render: function () {
+		return (
+			<div className="addblog">
+				<div id="btn-blog" className="btn btn-default pull-right btn-blog">添加</div>
+				<div id="editor"></div>
+			</div>
 		)
 	}
 });
