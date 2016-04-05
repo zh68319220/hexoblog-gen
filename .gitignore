@@ -8,7 +8,6 @@
 .idea/*
 __pycache__/
 assets/node_modules/
-/node_modules/*
-/js/*
-/scss/*
-/p/*
+assets/js/
+assets/scss/
+assets/p/
