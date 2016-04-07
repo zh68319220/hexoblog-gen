@@ -17,6 +17,7 @@ class DB(base):
             else:
                 sql += "`" + p['key'] + "`='" + p['value'] + "' and "
         cursor.execute(sql)
+        l.info(sql)
         return cursor.fetchone()
     def findmany(self, table, params):
         cursor = self.cursor()
