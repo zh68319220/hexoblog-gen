@@ -53,10 +53,8 @@ class LoginAJHandler(main):
     def post(self):
         username = self.get_argument('username')
         userpsw = self.get_argument('password')
-        condi = [{'key': 'username', 'value': username}, {'key': 'password', 'value': userpsw}]
+        condi = [{'key': 'password', 'value': userpsw}]
         rs = self.db().findone("user", condi)
-        l.info(rs)
-        l.info(condi)
         if rs is None:
             self.write({'status': False})
         else:
