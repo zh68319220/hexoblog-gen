@@ -25,6 +25,7 @@ class Application(tornado.web.Application):
             # Connect to the database
             connection = pymysql.connect(host='localhost',
                                          user='root',
+                                         password='root',
                                          db='blog',
                                          charset='utf8',
                                          cursorclass=pymysql.cursors.DictCursor)
