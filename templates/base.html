@@ -30,7 +30,7 @@
 
             <ul id="menu" data-hl="{{ highlight }}">
                 {% for r in result %}
-                    <li><a name="main" class="menuitem" href="/">{{ r['name'] }}</a></li>
+                    <li><a name="{{ r['name'] }}" class="menuitem" href="/">{{ r['name'] }}</a></li>
                 {% end %}
             </ul>
 
