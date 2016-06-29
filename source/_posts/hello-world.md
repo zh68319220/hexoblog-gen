@@ -2,6 +2,7 @@
 title: First Blood.
 categories: [web]
 tags: 建站
+date: 2016-06-01 17:41:58
 ---
 
 之前在[主机公园](https://hostpark.cn/)上使用免费的虚拟主机搭建了一个博客,由于速度太慢(服务器貌似在印度...)果断入坑hexo.

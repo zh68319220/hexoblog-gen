@@ -24,7 +24,15 @@
             <table>
                 <tr>
                     <% for(var i in theme.customize.social_links) { %>
-                    <td><a href="<%- url_for(theme.customize.social_links[i]) %>" target="_blank" title="<%= i %>"><i class="fa fa-<%= i %>"></i></a></td>
+                        <% if(i == 'weixin') { %>
+                            <td><a href="<%- url_for(theme.customize.social_links[i]) %>" target="_blank" title="18716663191"><i class="fa fa-<%= i %>"></i></a></td>
+                        <% } else if(i == 'qq') { %>
+                            <td><a href="<%- url_for(theme.customize.social_links[i]) %>" target="_blank" title="420866750"><i class="fa fa-<%= i %>"></i></a></td>
+                        <% }else if(i == 'envelope'){ %>
+                            <td><a href="<%- url_for(theme.customize.social_links[i]) %>" target="_blank" title="420866750@qq.com"><i class="fa fa-<%= i %>"></i></a></td>
+                        <% }else{ %>
+                        <td><a href="<%- url_for(theme.customize.social_links[i]) %>" target="_blank" title="<%= i %>"><i class="fa fa-<%= i %>"></i></a></td>
+                        <% } %>
                     <% } %>
                 </tr>
             </table>
